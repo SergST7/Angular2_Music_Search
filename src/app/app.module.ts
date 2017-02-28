@@ -1,23 +1,21 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 
-import {
-  Routes,
-  RouterModule
-} from '@angular/router';
-
-import {
-  LocationStrategy,
-  HashLocationStrategy,
-  APP_BASE_HREF
-} from '@angular/common';
 
 import { AppComponent }  from './components/app.component';
+import { SearchComponent }  from './components/search.component';
+
+import {DataService} from "./services/data.service";
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent,
+    SearchComponent
+  ],
+  bootstrap:    [ AppComponent ],
+  providers: [
+    DataService
+  ]
 })
 export class AppModule { }
