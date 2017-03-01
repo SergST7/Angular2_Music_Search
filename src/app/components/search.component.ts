@@ -36,7 +36,7 @@ import { DataService } from "../services/data.service";
   </div>
    <div *ngIf="results.length">
     <h2>Results</h2>
-    <div class="row">
+    <div class="row row-flex">
       <div class="col-md-4 col-sm-6" *ngFor="let t of results">
         <div class="thumbnail">
           <div class="content">
