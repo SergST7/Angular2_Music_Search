@@ -36,4 +36,8 @@ export class DataService {
   getTrack(id: string): Observable<any[]> {
     return this.getQuerystr(`/tracks/${id}`);
   }
+
+  getArtist(id: string): Observable<any[]> {
+    return this.getQuerystr(`/artists/${id}`);
+  }
 }

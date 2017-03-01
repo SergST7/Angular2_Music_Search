@@ -9,6 +9,7 @@ import {
 import { AppComponent }  from './components/app.component';
 import { SearchComponent }  from './components/search.component';
 import {TrackComponent} from "./components/track.component";
+import {ArtistComponent} from "./components/artist.component";
 
 import {DataService} from "./services/data.service";
 
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
   { path: 'track/:id', component: TrackComponent },
+  { path: 'artists/:id', component: ArtistComponent },
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SearchComponent,
-    TrackComponent
+    TrackComponent,
+    ArtistComponent
   ],
   bootstrap:    [ AppComponent ],
   providers: [
