@@ -2,7 +2,10 @@
  * Created by SergST on 28.02.2017.
  */
 
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from "../services/data.service";
@@ -63,18 +66,28 @@ import { DataService } from "../services/data.service";
 </div>
 `
 })
-export class SearchComponent{
+export class SearchComponent implements OnInit {
   query: string;
   results: Object;
 
   constructor (private dataService: DataService,
-                private  route: ActivatedRoute){
+                private route: ActivatedRoute,
+                private router: Router){
 
-    this.route.queryParams.subscribe(params => {this.query = params['query'] || 'serg'})
+    this.route.queryParams.subscribe(params => {this.query = params['query'] || 'кино'})
   }
 
-  submit(query: string): void {
-    this.query = query;
+  OnInit (){
+    this.search()
+  }
+
+  submit(query: string): void{
+    this.router.navigate(['search'], { queryParams: { query: query }})
+      .then(_ => this.search())
+  }
+
+  search(): void {
+    // this.query = query;
     console.log('query: ', this.query);
     if (!this.query) {
       return
