@@ -12,10 +12,10 @@ export class DataService {
 
   searchByTrack(query: String){
     let params = [
-      'q=${query}',
+      `q=${query}`,
       'type=track'
     ].join('&');
-    let queryUrl = 'https://api.spotify.com/v1/search?${params}';
+    let queryUrl = `https://api.spotify.com/v1/search?${params}`;
     return this.http.request(queryUrl).map((res: any) => res.json())
   }
 }
