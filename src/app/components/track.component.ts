@@ -14,11 +14,19 @@ import {DataService} from "../services/data.service";
 @Component({
   selector: 'my-track',
   template: `
-  <h1>Track Component</h1>
+  <h2>Track</h2>
     <div *ngIf="track">
       <h1>{{ track.name }}</h1>
-        <a href (click)="back()">Back</a>
-   </div>
+      <div>
+        <img src="{{ track.album.images[1].url }}">
+      </div>
+      <div>
+        <audio controls src="{{ track.preview_url }}"></audio>
+      </div>
+      <div>
+         <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+       </div>
+  </div>
 `
 })
 export class TrackComponent implements  OnInit{
