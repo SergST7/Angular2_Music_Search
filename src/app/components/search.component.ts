@@ -3,6 +3,8 @@
  */
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from "../services/data.service";
 
 
@@ -42,9 +44,11 @@ export class SearchComponent{
   query: string;
   results: Object;
 
-  constructor (private dataService: DataService){
+  constructor (private dataService: DataService,
+                private  route: ActivatedRoute){
 
-  };
+    this.route.queryParams.subscribe(params => {this.query = params['query'] || ''})
+  }
 
   submit(query: string): void {
     this.query = query;
@@ -53,7 +57,17 @@ export class SearchComponent{
       return
     }
 
-    this.dataService.searchByTrack(this.query).subscribe((res: any)=> console.log(res))
+    this.dataService.searchByTrack(this.query).subscribe((res: any)=> this.retrieveResults(res))
   }
+
+  retrieveResults (res: any): void {
+    this.results = null;
+    if (res && res.tracks && res.tracks.items) {
+      this.results = res.tracks.items;
+      console.log(this.results);
+    }
+  }
+
+
 }
 
