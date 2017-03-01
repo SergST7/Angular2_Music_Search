@@ -35,7 +35,30 @@ import { DataService } from "../services/data.service";
     No tracks were found with the term '{{ query }}'
   </div>
    <div *ngIf="results.length">
-    <h1>Results</h1>
+    <h2>Results</h2>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let t of results">
+        <div class="thumbnail">
+          <div class="content">
+            <img class="img-responsive" src="{{ t.album.images[0].url }}" alt="album">
+            <div class="caption">
+              <h5> Artist List</h5>
+              <span *ngFor=" let art of t.artists">
+                <a [routerLink]="['/artists', art.id]">{{ art.name }}, </a>
+              </span>
+            </div>
+            <p>             
+              <a [routerLink]="['/track', t.id]"><span>Track - </span>{{ t.name }}, </a>
+            </p>
+            <div class="attribution">
+               <h4>
+                  <a [routerLink]="['/album', t.album.id]"><span>Album - </span>{{ t.album.name }}, </a>
+               </h4>
+            </div>         
+          </div>
+        </div>    
+      </div>
+    </div>
   </div>
 </div>
 `
@@ -47,7 +70,7 @@ export class SearchComponent{
   constructor (private dataService: DataService,
                 private  route: ActivatedRoute){
 
-    this.route.queryParams.subscribe(params => {this.query = params['query'] || ''})
+    this.route.queryParams.subscribe(params => {this.query = params['query'] || 'serg'})
   }
 
   submit(query: string): void {
