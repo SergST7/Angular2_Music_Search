@@ -29,7 +29,7 @@ export class DataService {
     return this.getQuerystr(`/search`, [`q=${query}`, `type=${type}`]);
   }
 
-  searchTrack(query: string): Observable<any[]> {
+  searchByTrack(query: string): Observable<any[]> {
     return this.search(query, 'track');
   }
 
