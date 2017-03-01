@@ -77,7 +77,7 @@ export class SearchComponent implements OnInit {
     this.route.queryParams.subscribe(params => {this.query = params['query'] || 'кино'})
   }
 
-  OnInit (){
+  ngOnInit (){
     this.search()
   }
 
