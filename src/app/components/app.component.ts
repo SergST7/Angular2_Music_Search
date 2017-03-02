@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../services/login.service";
 
 @Component({
   selector: 'my-app',
@@ -13,7 +14,15 @@ import { Component } from '@angular/core';
                   <li><a [routerLink]="['search']">Musik Search App</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a [routerLink]="['login']">Log In</a></li>
+                  <li *ngIf="!authService.getUser()">
+                    <a [routerLink]="['login']"  role="button">Log In</a>
+                  </li>
+                  <li *ngIf="authService.getUser()">
+                    <a [routerLink]="['profile']"  role="button" >{{authService.getUser()}}</a>
+                  </li>         
+                  <li *ngIf="authService.getUser()">
+                    <a (click)="logout()" role="button">Log Out</a>
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -22,4 +31,13 @@ import { Component } from '@angular/core';
             </div>
 `
 })
-export class AppComponent  {}
+export class AppComponent  {
+
+  constructor(public authService: AuthService){
+  }
+
+  logout(){
+    this.authService.logout();
+    return false
+  }
+}

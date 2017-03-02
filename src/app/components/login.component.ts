@@ -10,7 +10,7 @@ import {AuthService} from "../services/login.service";
   selector: 'login',
   template:`
   <div class="container">
-    <form class="form-inline">
+    <form class="form-inline" *ngIf="!authService.getUser()">
       <div class="form-group">
         <label for="username">User: </label>
         <input type="text" class="form-control" name="username"  #username placeholder="User name">
@@ -19,8 +19,15 @@ import {AuthService} from "../services/login.service";
         <label for="Pass">Password: </label>
         <input type="password" class="form-control" name="password" #password placeholder="password">
       </div>
-      <button type="submit" class="btn btn-primary">Log In</button>
+      <button class="btn btn-primary" (click)="login(username.value, password.value)">Log In</button>
     </form>
+    <div class="well" *ngIf="authService.getUser()">
+      Logged in as <b>{{authService.getUser()}}</b>
+      <button class="btn btn-danger" (click)="logout()">Log Out</button>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="message">
+       {{ message }}
+     </div>
 </div>
 `
 
