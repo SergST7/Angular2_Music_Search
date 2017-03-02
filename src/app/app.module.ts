@@ -11,18 +11,18 @@ import { SearchComponent }  from './components/search.component';
 import {TrackComponent} from "./components/track.component";
 import {ArtistComponent} from "./components/artist.component";
 import {LoginComponent} from "./components/login.component";
+import {ProfileComponent} from "./components/profile.component";
 
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
 
-
-
 const appRoutes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'track/:id', component: TrackComponent },
   { path: 'artists/:id', component: ArtistComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
@@ -36,7 +36,8 @@ const appRoutes: Routes = [
     SearchComponent,
     TrackComponent,
     ArtistComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   bootstrap:    [ AppComponent ],
   providers: [

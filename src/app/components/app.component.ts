@@ -21,7 +21,7 @@ import {AuthService} from "../services/login.service";
                     <a [routerLink]="['profile']"  role="button" >{{authService.getUser()}}</a>
                   </li>         
                   <li *ngIf="authService.getUser()">
-                    <a (click)="logout()" role="button">Log Out</a>
+                    <a [routerLink]="['login']" (click)="logout()" role="button">Log Out</a>
                   </li>
                 </ul>
               </div>
