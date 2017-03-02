@@ -55,7 +55,7 @@ import { DataService } from "../services/data.service";
             </p>
             <div class="attribution">
                <h4>
-                  <a [routerLink]="['/album', t.album.id]"><span>Album - </span>{{ t.album.name }}, </a>
+                  <a [routerLink]="['/albums', t.album.id]"><span>Album - </span>{{ t.album.name }}, </a>
                </h4>
             </div>         
           </div>

@@ -10,6 +10,7 @@ import { AppComponent }  from './components/app.component';
 import { SearchComponent }  from './components/search.component';
 import {TrackComponent} from "./components/track.component";
 import {ArtistComponent} from "./components/artist.component";
+import {AlbumComponent} from "./components/album.component";
 import {LoginComponent} from "./components/login.component";
 import {ProfileComponent} from "./components/profile.component";
 import {ProtectedComponent} from "./components/protected.component";
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'track/:id', component: TrackComponent },
   { path: 'artists/:id', component: ArtistComponent },
+  { path: 'albums/:id', component: AlbumComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard] },
   { path: 'protected', component: ProtectedComponent, canActivate: [LoginGuard] },
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
     SearchComponent,
     TrackComponent,
     ArtistComponent,
+    AlbumComponent,
     LoginComponent,
     ProfileComponent,
     ProtectedComponent

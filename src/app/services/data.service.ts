@@ -40,4 +40,8 @@ export class DataService {
   getArtist(id: string): Observable<any[]> {
     return this.getQuerystr(`/artists/${id}`);
   }
+
+  getAlbum(id: string): Observable<any[]> {
+    return this.getQuerystr(`/albums/${id}`);
+  }
 }
