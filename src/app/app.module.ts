@@ -12,6 +12,7 @@ import {TrackComponent} from "./components/track.component";
 import {ArtistComponent} from "./components/artist.component";
 import {LoginComponent} from "./components/login.component";
 import {ProfileComponent} from "./components/profile.component";
+import {ProtectedComponent} from "./components/protected.component";
 
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'artists/:id', component: ArtistComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'protected', component: ProtectedComponent },
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     TrackComponent,
     ArtistComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProtectedComponent
   ],
   bootstrap:    [ AppComponent ],
   providers: [

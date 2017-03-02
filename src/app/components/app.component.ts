@@ -12,6 +12,7 @@ import {AuthService} from "../services/login.service";
                 </div>
                 <ul class="nav navbar-nav">
                   <li><a [routerLink]="['search']">Musik Search App</a></li>
+                  <li><a [routerLink]="['protected']">Protected</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li *ngIf="!authService.getUser()">
