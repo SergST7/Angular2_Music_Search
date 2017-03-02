@@ -12,6 +12,7 @@ import {TrackComponent} from "./components/track.component";
 import {ArtistComponent} from "./components/artist.component";
 
 import {DataService} from "./services/data.service";
+import {AuthService} from "./services/login.service";
 
 
 
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   ],
   bootstrap:    [ AppComponent ],
   providers: [
-    DataService
+    DataService,
+    AuthService
   ]
 })
 export class AppModule { }
