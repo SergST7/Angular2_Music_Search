@@ -16,6 +16,7 @@ import {ProtectedComponent} from "./components/protected.component";
 
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
+import {LoginGuard} from "./guards/login.guard";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -23,8 +24,8 @@ const appRoutes: Routes = [
   { path: 'track/:id', component: TrackComponent },
   { path: 'artists/:id', component: ArtistComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'protected', component: ProtectedComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard] },
+  { path: 'protected', component: ProtectedComponent, canActivate: [LoginGuard] },
 ];
 
 @NgModule({
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
   bootstrap:    [ AppComponent ],
   providers: [
     DataService,
-    AuthService
+    AuthService,
+    LoginGuard
   ]
 })
 export class AppModule { }
