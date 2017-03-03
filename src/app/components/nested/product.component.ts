@@ -26,7 +26,6 @@ import {Router, ActivatedRoute} from "@angular/router";
     <li role="presentation">
       <a href [routerLink]="['./stat']">Statistic</a>
     </li>
-    
   </ul>
   
   <div class="row">
@@ -43,6 +42,6 @@ export class ProductComponent{
 
   goToRoute (id: string): void{
 
-    this.router.navigate(['/', id], {relativeTo: this.route})
+    this.router.navigate(['./', id], {relativeTo: this.route})
   }
 }
