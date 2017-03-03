@@ -17,6 +17,7 @@ import {ProtectedComponent} from "./components/protected.component";
 import {HomeComponent} from "./components/home.component";
 import {ProductComponent} from "./components/nested/product.component";
 import {MainProductComponent} from "./components/nested/main.product.component";
+import {StatProductComponent} from "./components/nested/statistic.product.component";
 
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
@@ -24,7 +25,8 @@ import {LoginGuard} from "./guards/login.guard";
 
 const productRoutes: Routes = [
   // {path: '', redirectTo: 'main'},
-  {path: 'main', component: MainProductComponent }
+  {path: 'main', component: MainProductComponent },
+  {path: 'stat', component: StatProductComponent }
 ];
 
 const appRoutes: Routes = [
@@ -57,7 +59,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     ProtectedComponent,
     ProductComponent,
-    MainProductComponent
+    MainProductComponent,
+    StatProductComponent
   ],
   bootstrap:    [ AppComponent ],
   providers: [
