@@ -8,7 +8,7 @@ import {AuthService} from "../services/login.service";
             <nav class="navbar navbar-default">
               <div class="container-fluid">
                 <div class="navbar-header">
-                  <a class="navbar-brand" [routerLink]="['search']">My App</a>
+                  <a class="navbar-brand" [routerLink]="['home']">My App</a>
                 </div>
                 <ul class="nav navbar-nav">
                   <li><a [routerLink]="['search']">Musik Search App</a></li>

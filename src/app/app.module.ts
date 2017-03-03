@@ -14,13 +14,15 @@ import {AlbumComponent} from "./components/album.component";
 import {LoginComponent} from "./components/login.component";
 import {ProfileComponent} from "./components/profile.component";
 import {ProtectedComponent} from "./components/protected.component";
+import {HomeComponent} from "./components/home.component";
 
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
 import {LoginGuard} from "./guards/login.guard";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'track/:id', component: TrackComponent },
   { path: 'artists/:id', component: ArtistComponent },
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
   ],
   declarations: [
     AppComponent,
+    HomeComponent,
     SearchComponent,
     TrackComponent,
     ArtistComponent,
