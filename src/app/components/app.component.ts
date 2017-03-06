@@ -31,6 +31,7 @@ import {AuthService} from "../services/login.service";
             
             <router-outlet></router-outlet>
             </div>
+            <di-main></di-main>
 `
 })
 export class AppComponent  {

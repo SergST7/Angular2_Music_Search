@@ -34,7 +34,6 @@ import {Router, ActivatedRoute} from "@angular/router";
     </div>
   </div>
 `
-
 })
 export class ProductComponent{
 

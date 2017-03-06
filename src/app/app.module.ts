@@ -20,9 +20,13 @@ import {MainProductComponent} from "./components/nested/main.product.component";
 import {StatProductComponent} from "./components/nested/statistic.product.component";
 import {IdProductComponent} from "./components/nested/id.product.component";
 
+//services
 import {DataService} from "./services/data.service";
 import {AuthService} from "./services/login.service";
 import {LoginGuard} from "./guards/login.guard";
+
+//modules
+import {DependencyInjectionsModule} from "./di-module/di.module";
 
 const productRoutes: Routes = [
   // {path: '', redirectTo: 'main'},
@@ -48,7 +52,8 @@ const appRoutes: Routes = [
   imports:      [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    DependencyInjectionsModule
   ],
   declarations: [
     AppComponent,
