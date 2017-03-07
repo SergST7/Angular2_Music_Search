@@ -14,6 +14,7 @@ import {AuthService} from "../services/login.service";
                   <li><a [routerLink]="['search']">Musik Search App</a></li>
                   <li><a [routerLink]="['protected']">Protected</a></li>
                   <li><a [routerLink]="['product']">Product nested</a></li>
+                  <li><a [routerLink]="['di']">DI</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li *ngIf="!authService.getUser()">
@@ -31,7 +32,7 @@ import {AuthService} from "../services/login.service";
             
             <router-outlet></router-outlet>
             </div>
-            <di-main></di-main>
+            <!--<di-main></di-main>-->
 `
 })
 export class AppComponent  {

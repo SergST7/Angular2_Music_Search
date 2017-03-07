@@ -26,7 +26,7 @@ import {AuthService} from "./services/login.service";
 import {LoginGuard} from "./guards/login.guard";
 
 //modules
-import {DependencyInjectionsModule} from "./di-module/di.module";
+import {DependencyInjectionsModule, DiMainComponent} from "./di-module/di.module";
 
 const productRoutes: Routes = [
   // {path: '', redirectTo: 'main'},
@@ -34,6 +34,7 @@ const productRoutes: Routes = [
   {path: 'stat', component: StatProductComponent },
   {path: ':id', component: IdProductComponent },
 ];
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard] },
   { path: 'protected', component: ProtectedComponent, canActivate: [LoginGuard] },
   { path: 'product', component: ProductComponent, children: productRoutes },
+  { path: 'di', component: DiMainComponent },
 ];
 
 @NgModule({

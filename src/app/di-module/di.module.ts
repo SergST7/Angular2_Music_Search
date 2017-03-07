@@ -11,7 +11,7 @@ import {
   selector: 'di-main',
   template: `<h1>Hello DI</h1>`
 })
-class DiMainComponent{}
+export class DiMainComponent{}
 
 
 @NgModule({
