@@ -10,12 +10,14 @@ import {CommonModule} from "@angular/common";
 
 //components
 import {SimpleApiComponent} from "./di.simple.component";
+import {ParamComponent} from "./di.param.component";
 
 @Component({
   selector: 'di-main',
   template: `
   <h1>Hello DI</h1>
      <di-simple-api></di-simple-api>
+     <di-param-api></di-param-api>
 `
 })
 export class DiMainComponent{}
@@ -23,7 +25,8 @@ export class DiMainComponent{}
 @NgModule({
   declarations: [
     DiMainComponent,
-    SimpleApiComponent
+    SimpleApiComponent,
+    ParamComponent
   ],
   imports: [CommonModule ],
 
